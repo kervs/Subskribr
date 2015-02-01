@@ -25,11 +25,12 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewKeys" ofType:@"plist"]];
     NSString *applicationId = [dictionary objectForKey:@"parseApplicationId"];
     NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
     NSString *StripePublishableKey = [dictionary objectForKey:@"StripePublishableKey"];
     
+    NSLog(@"%@",applicationId);
     [Parse setApplicationId:applicationId
                   clientKey:clientKey];
     
