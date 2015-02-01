@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "Stripe.h"
+#import <FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
@@ -16,8 +20,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"]];
+    NSString *applicationId = [dictionary objectForKey:@"parseApplicationId"];
+    NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
+    NSString *StripePublishableKey = [dictionary objectForKey:@"StripePublishableKey"];
+    
+    [Parse setApplicationId:applicationId
+                  clientKey:clientKey];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFFacebookUtils initializeFacebook];
+    
+    [Stripe setDefaultPublishableKey:StripePublishableKey];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

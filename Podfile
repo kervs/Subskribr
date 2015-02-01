@@ -1,0 +1,15 @@
+# platform :ios, '6.0'
+
+pod 'AFNetworking', '~> 2.5'
+pod 'AWSiOSSDKv2', '~> 2.0'
+pod 'MBProgressHUD', '~> 0.9'
+pod 'Reachability', '~> 3.1.1'
+pod 'ReactiveCocoa', '~> 2.3'
+pod 'SDWebImage', '~> 3.7'
+pod 'Parse'
+pod 'Facebook-iOS-SDK'
+pod 'ParseFacebookUtils'
+pod 'Stripe'
+pod 'PaymentKit'
+
+source 'https://github.com/CocoaPods/Specs.git'

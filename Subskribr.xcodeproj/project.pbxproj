@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331016BC469703CE29F7B02D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E09C6CC0588392BD2D46A253 /* libPods.a */; };
 		3BE813FD1A7DC0A300AE24FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE813FC1A7DC0A300AE24FF /* main.m */; };
 		3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE813FF1A7DC0A300AE24FF /* AppDelegate.m */; };
 		3BE814031A7DC0A300AE24FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814021A7DC0A300AE24FF /* ViewController.m */; };
@@ -14,6 +15,7 @@
 		3BE814081A7DC0A300AE24FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814071A7DC0A300AE24FF /* Images.xcassets */; };
 		3BE8140B1A7DC0A300AE24FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814091A7DC0A300AE24FF /* LaunchScreen.xib */; };
 		3BE814171A7DC0A400AE24FF /* SubskribrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814161A7DC0A400AE24FF /* SubskribrTests.m */; };
+		3BE814211A7DC5FE00AE24FF /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814201A7DC5FE00AE24FF /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		3BE814101A7DC0A300AE24FF /* SubskribrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubskribrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE814151A7DC0A400AE24FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BE814161A7DC0A400AE24FF /* SubskribrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubskribrTests.m; sourceTree = "<group>"; };
+		3BE814201A7DC5FE00AE24FF /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		741087C513FB467F85249682 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A2B7EF661FF27ED17CFC87DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E09C6CC0588392BD2D46A253 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331016BC469703CE29F7B02D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34C57560F13ACC48C8C4E7E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E09C6CC0588392BD2D46A253 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3BE813EE1A7DC0A300AE24FF = {
 			isa = PBXGroup;
 			children = (
 				3BE813F91A7DC0A300AE24FF /* Subskribr */,
 				3BE814131A7DC0A400AE24FF /* SubskribrTests */,
 				3BE813F81A7DC0A300AE24FF /* Products */,
+				F8B7CB7A48324895C799ED3C /* Pods */,
+				34C57560F13ACC48C8C4E7E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +131,19 @@
 		3BE814141A7DC0A400AE24FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BE814201A7DC5FE00AE24FF /* Keys.plist */,
 				3BE814151A7DC0A400AE24FF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8B7CB7A48324895C799ED3C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				741087C513FB467F85249682 /* Pods.debug.xcconfig */,
+				A2B7EF661FF27ED17CFC87DD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BE8141A1A7DC0A400AE24FF /* Build configuration list for PBXNativeTarget "Subskribr" */;
 			buildPhases = (
+				CA3411A74CD8F26F61F3C28C /* Check Pods Manifest.lock */,
 				3BE813F31A7DC0A300AE24FF /* Sources */,
 				3BE813F41A7DC0A300AE24FF /* Frameworks */,
 				3BE813F51A7DC0A300AE24FF /* Resources */,
+				A325EAAC076FB87588D4C61A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,10 +238,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE814211A7DC5FE00AE24FF /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A325EAAC076FB87588D4C61A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3411A74CD8F26F61F3C28C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3BE813F31A7DC0A300AE24FF /* Sources */ = {
@@ -341,6 +404,7 @@
 		};
 		3BE8141B1A7DC0A400AE24FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 741087C513FB467F85249682 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Subskribr/Info.plist;
@@ -351,6 +415,7 @@
 		};
 		3BE8141C1A7DC0A400AE24FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B7EF661FF27ED17CFC87DD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Subskribr/Info.plist;
@@ -412,6 +477,7 @@
 				3BE8141C1A7DC0A400AE24FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BE8141D1A7DC0A400AE24FF /* Build configuration list for PBXNativeTarget "SubskribrTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +486,7 @@
 				3BE8141F1A7DC0A400AE24FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
