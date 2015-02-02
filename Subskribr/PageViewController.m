@@ -20,12 +20,15 @@
 
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.navigationController.navigationBarHidden = YES;
     
+    PFUser *user = [PFUser currentUser];
+    if (user.username != nil) {
+        [self performSegueWithIdentifier:@"autoSignin" sender:self];
+    }
+
     self.pageTitles = @[@"Testing Testing", @"Test2", @"Test3", @"Test4"];
     self.pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
@@ -45,12 +48,7 @@
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
-//    PFUser *user = [PFUser currentUser];
-//    if (user.username != nil) {
-//        [self createMainView];
-//        
-//    }
-}
+    }
 
 #pragma mark - Page View Controller Data Source
 

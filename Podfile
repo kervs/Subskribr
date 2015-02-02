@@ -11,5 +11,6 @@ pod 'Facebook-iOS-SDK'
 pod 'ParseFacebookUtils'
 pod 'Stripe'
 pod 'PaymentKit'
+pod 'AMSlideMenu', '~> 1.5.3'
 
 source 'https://github.com/CocoaPods/Specs.git'

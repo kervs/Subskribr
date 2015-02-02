@@ -30,7 +30,6 @@
     NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
     NSString *StripePublishableKey = [dictionary objectForKey:@"StripePublishableKey"];
     
-    NSLog(@"%@",applicationId);
     [Parse setApplicationId:applicationId
                   clientKey:clientKey];
     
