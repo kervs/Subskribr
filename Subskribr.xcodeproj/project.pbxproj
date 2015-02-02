@@ -21,6 +21,9 @@
 		3BE814391A7DDE3E00AE24FF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814381A7DDE3E00AE24FF /* SignUpViewController.m */; };
 		3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8143B1A7DE21400AE24FF /* MainVC.m */; };
 		3BE8143F1A7DFCB600AE24FF /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */; };
+		3BE814421A7FD72900AE24FF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814411A7FD72900AE24FF /* ProfileViewController.m */; };
+		3BE814431A7FF5A600AE24FF /* NewKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814321A7DD75400AE24FF /* NewKeys.plist */; };
+		3BE814461A7FF7C500AE24FF /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,10 @@
 		3BE8143B1A7DE21400AE24FF /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		3BE8143D1A7DFCB600AE24FF /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		3BE814401A7FD72900AE24FF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3BE814411A7FD72900AE24FF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		741087C513FB467F85249682 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B7EF661FF27ED17CFC87DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E09C6CC0588392BD2D46A253 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +132,10 @@
 				3BE814251A7DCFE700AE24FF /* PageViewController.m */,
 				3BE8143D1A7DFCB600AE24FF /* SettingTableViewController.h */,
 				3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */,
+				3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */,
+				3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */,
+				3BE814401A7FD72900AE24FF /* ProfileViewController.h */,
+				3BE814411A7FD72900AE24FF /* ProfileViewController.m */,
 				3BE8143A1A7DE21400AE24FF /* MainVC.h */,
 				3BE8143B1A7DE21400AE24FF /* MainVC.m */,
 				3BE814041A7DC0A300AE24FF /* Main.storyboard */,
@@ -253,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE814431A7FF5A600AE24FF /* NewKeys.plist in Resources */,
 				3BE814061A7DC0A300AE24FF /* Main.storyboard in Resources */,
 				3BE8140B1A7DC0A300AE24FF /* LaunchScreen.xib in Resources */,
 				3BE814081A7DC0A300AE24FF /* Images.xcassets in Resources */,
@@ -308,10 +320,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE814261A7DCFE700AE24FF /* PageContentViewController.m in Sources */,
+				3BE814421A7FD72900AE24FF /* ProfileViewController.m in Sources */,
 				3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */,
 				3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */,
 				3BE814391A7DDE3E00AE24FF /* SignUpViewController.m in Sources */,
 				3BE8143F1A7DFCB600AE24FF /* SettingTableViewController.m in Sources */,
+				3BE814461A7FF7C500AE24FF /* ProfileEditViewController.m in Sources */,
 				3BE814271A7DCFE700AE24FF /* PageViewController.m in Sources */,
 				3BE813FD1A7DC0A300AE24FF /* main.m in Sources */,
 				3BE814361A7DDE3300AE24FF /* LoginViewController.m in Sources */,
