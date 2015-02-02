@@ -1,6 +1,6 @@
 //
 //  SignUpViewController.m
-//  CelebDuel
+//  Subskribr
 //
 //  Created by Kervins Valcourt on 11/26/14.
 //  Copyright (c) 2014 EastoftheWestEnd. All rights reserved.
@@ -36,10 +36,6 @@
 
 }
 
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (IBAction)connectWithFB:(UIButton *)sender {
     NSArray *permissionArray = @[@"user_about_me",@"email",@"user_birthday"];
     [PFFacebookUtils logInWithPermissions:permissionArray block:^(PFUser *user, NSError *error) {
@@ -62,8 +58,6 @@
     }];
 }
 
-
-
 - (IBAction)signUpFired:(UIButton *)sender {
     [ self.passwordField resignFirstResponder];
     [self.emailField resignFirstResponder];
@@ -82,7 +76,6 @@
         [self registerNewUser];
     }
 }
-
 
 - (void) registerNewUser {
     NSLog(@"registering....");
@@ -106,7 +99,7 @@
     }];
 }
 
-- (void)sendWelcomeEmail{
+- (void)sendWelcomeEmail {
     [PFCloud callFunctionInBackground:@"sendWelcomeEmail"
                        withParameters:@{}
                                 block:^(NSString *result, NSError *error) {
@@ -123,7 +116,7 @@
 
 }
 
-- (void)displayAlertView:(NSString *)message{
+- (void)displayAlertView:(NSString *)message {
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
                                                      message: message
                                                     delegate:self
@@ -132,14 +125,12 @@
     [alert show];
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return YES;
 }
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
   if (textField == self.emailField) {
         [self.passwordField becomeFirstResponder];
     } else if(textField == self.passwordField){
@@ -158,6 +149,7 @@
 }
 
 #pragma mark - FB helper method
+
 - (void) updateUserInformation {
     FBRequest *request = [FBRequest requestForMe];
     PFUser *currentUser = [PFUser currentUser];
@@ -189,8 +181,5 @@
         }
     }];
 }
-
-
-
 
 @end

@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  CelebDuel
+//  Subskribr
 //
-//  Created by JESSE SCHNEIDER on 11/15/14.
-//  Copyright (c) 2014 JESSE SCHNEIDER. All rights reserved.
+//  Created by Kervins Valcourt on 11/15/14.
+//  Copyright (c) 2014 EastoftheWestEnd. All rights reserved.
 //
 
 #import "PageViewController.h"

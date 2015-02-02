@@ -1,6 +1,6 @@
 //
 //  LoginViewController.m
-//  CelebDuel
+//  Subskribr
 //
 //  Created by Kervins Valcourt on 11/26/14.
 //  Copyright (c) 2014 EastoftheWestEnd. All rights reserved.
@@ -45,7 +45,6 @@
                 [self displayAlertView:[error userInfo][@"error"]];
                 NSLog(@"%@",error);
             }
-            
         }
         else if (user.isNew) {
             [self updateUserInformation];
@@ -63,7 +62,6 @@
 
 }
 
-
 - (void)sendWelcomeEmail{
     [PFCloud callFunctionInBackground:@"sendWelcomeEmail"
                        withParameters:@{}
@@ -80,7 +78,6 @@
                                 }];
     
 }
-
 
 - (IBAction)loginFired:(UIButton *)sender {
     [self.view endEditing:YES];
@@ -109,13 +106,10 @@
     [alert show];
 }
 
-
-
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     return YES;
 }
-
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -139,6 +133,7 @@
 }
 
 #pragma mark - FB helper method
+
 - (void) updateUserInformation {
     FBRequest *request = [FBRequest requestForMe];
     PFUser *currentUser = [PFUser currentUser];
@@ -170,7 +165,5 @@
         }
     }];
 }
-
-
 
 @end
