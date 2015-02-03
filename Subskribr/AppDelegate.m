@@ -11,6 +11,7 @@
 #import "Stripe.h"
 #import <FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "Keys.h"
 
 @interface AppDelegate ()
 
@@ -20,23 +21,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Parse setApplicationId:kParseApplicationId
+                  clientKey:kParseClientKey];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFFacebookUtils initializeFacebook];
+    [Stripe setDefaultPublishableKey:kStripePublishableKey];
+    
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewKeys" ofType:@"plist"]];
-    NSString *applicationId = [dictionary objectForKey:@"parseApplicationId"];
-    NSString *clientKey = [dictionary objectForKey:@"parseClientKey"];
-    NSString *StripePublishableKey = [dictionary objectForKey:@"StripePublishableKey"];
-    
-    [Parse setApplicationId:applicationId
-                  clientKey:clientKey];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    [PFFacebookUtils initializeFacebook];
-    
-    [Stripe setDefaultPublishableKey:StripePublishableKey];
     return YES;
 }
 

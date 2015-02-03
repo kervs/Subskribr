@@ -22,8 +22,11 @@
 		3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8143B1A7DE21400AE24FF /* MainVC.m */; };
 		3BE8143F1A7DFCB600AE24FF /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */; };
 		3BE814421A7FD72900AE24FF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814411A7FD72900AE24FF /* ProfileViewController.m */; };
-		3BE814431A7FF5A600AE24FF /* NewKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814321A7DD75400AE24FF /* NewKeys.plist */; };
 		3BE814461A7FF7C500AE24FF /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */; };
+		3BE8144C1A802AFB00AE24FF /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8144B1A802AFB00AE24FF /* Keys.m */; };
+		3BE8144F1A804AD100AE24FF /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8144E1A804AD100AE24FF /* DataSource.m */; };
+		3BE814521A804CFD00AE24FF /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814511A804CFD00AE24FF /* Business.m */; };
+		3BE814551A80524800AE24FF /* MainViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814541A80524800AE24FF /* MainViewTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,6 @@
 		3BE814251A7DCFE700AE24FF /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		3BE8142C1A7DD43200AE24FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BE8142E1A7DD5BE00AE24FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3BE814321A7DD75400AE24FF /* NewKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewKeys.plist; sourceTree = "<group>"; };
 		3BE814341A7DDE3300AE24FF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3BE814351A7DDE3300AE24FF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3BE814371A7DDE3E00AE24FF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 		3BE814411A7FD72900AE24FF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
 		3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
+		3BE8144A1A802AFB00AE24FF /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
+		3BE8144B1A802AFB00AE24FF /* Keys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
+		3BE8144D1A804AD100AE24FF /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		3BE8144E1A804AD100AE24FF /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		3BE814501A804CFD00AE24FF /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
+		3BE814511A804CFD00AE24FF /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
+		3BE814531A80524800AE24FF /* MainViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewTableViewController.h; sourceTree = "<group>"; };
+		3BE814541A80524800AE24FF /* MainViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewTableViewController.m; sourceTree = "<group>"; };
 		741087C513FB467F85249682 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A2B7EF661FF27ED17CFC87DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E09C6CC0588392BD2D46A253 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +140,8 @@
 				3BE814231A7DCFE700AE24FF /* PageContentViewController.m */,
 				3BE814241A7DCFE700AE24FF /* PageViewController.h */,
 				3BE814251A7DCFE700AE24FF /* PageViewController.m */,
+				3BE814531A80524800AE24FF /* MainViewTableViewController.h */,
+				3BE814541A80524800AE24FF /* MainViewTableViewController.m */,
 				3BE8143D1A7DFCB600AE24FF /* SettingTableViewController.h */,
 				3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */,
 				3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */,
@@ -138,6 +150,10 @@
 				3BE814411A7FD72900AE24FF /* ProfileViewController.m */,
 				3BE8143A1A7DE21400AE24FF /* MainVC.h */,
 				3BE8143B1A7DE21400AE24FF /* MainVC.m */,
+				3BE814501A804CFD00AE24FF /* Business.h */,
+				3BE814511A804CFD00AE24FF /* Business.m */,
+				3BE8144D1A804AD100AE24FF /* DataSource.h */,
+				3BE8144E1A804AD100AE24FF /* DataSource.m */,
 				3BE814041A7DC0A300AE24FF /* Main.storyboard */,
 				3BE814071A7DC0A300AE24FF /* Images.xcassets */,
 				3BE814091A7DC0A300AE24FF /* LaunchScreen.xib */,
@@ -149,7 +165,8 @@
 		3BE813FA1A7DC0A300AE24FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3BE814321A7DD75400AE24FF /* NewKeys.plist */,
+				3BE8144A1A802AFB00AE24FF /* Keys.h */,
+				3BE8144B1A802AFB00AE24FF /* Keys.m */,
 				3BE8142E1A7DD5BE00AE24FF /* Info.plist */,
 				3BE813FC1A7DC0A300AE24FF /* main.m */,
 			);
@@ -264,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BE814431A7FF5A600AE24FF /* NewKeys.plist in Resources */,
 				3BE814061A7DC0A300AE24FF /* Main.storyboard in Resources */,
 				3BE8140B1A7DC0A300AE24FF /* LaunchScreen.xib in Resources */,
 				3BE814081A7DC0A300AE24FF /* Images.xcassets in Resources */,
@@ -320,10 +336,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE814261A7DCFE700AE24FF /* PageContentViewController.m in Sources */,
+				3BE814551A80524800AE24FF /* MainViewTableViewController.m in Sources */,
 				3BE814421A7FD72900AE24FF /* ProfileViewController.m in Sources */,
+				3BE814521A804CFD00AE24FF /* Business.m in Sources */,
+				3BE8144F1A804AD100AE24FF /* DataSource.m in Sources */,
 				3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */,
 				3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */,
 				3BE814391A7DDE3E00AE24FF /* SignUpViewController.m in Sources */,
+				3BE8144C1A802AFB00AE24FF /* Keys.m in Sources */,
 				3BE8143F1A7DFCB600AE24FF /* SettingTableViewController.m in Sources */,
 				3BE814461A7FF7C500AE24FF /* ProfileEditViewController.m in Sources */,
 				3BE814271A7DCFE700AE24FF /* PageViewController.m in Sources */,

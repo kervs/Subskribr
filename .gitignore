@@ -47,3 +47,5 @@ DerivedData
 Pods
 
 NewKeys.plist
+Keys.h
+Keys.m
