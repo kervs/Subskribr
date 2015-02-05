@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		331016BC469703CE29F7B02D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E09C6CC0588392BD2D46A253 /* libPods.a */; };
+		3B5F74531A808CFC00A83B60 /* CustomBusinessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */; };
 		3BE813FD1A7DC0A300AE24FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE813FC1A7DC0A300AE24FF /* main.m */; };
 		3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE813FF1A7DC0A300AE24FF /* AppDelegate.m */; };
 		3BE814061A7DC0A300AE24FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814041A7DC0A300AE24FF /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		3BE814171A7DC0A400AE24FF /* SubskribrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814161A7DC0A400AE24FF /* SubskribrTests.m */; };
 		3BE814261A7DCFE700AE24FF /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814231A7DCFE700AE24FF /* PageContentViewController.m */; };
 		3BE814271A7DCFE700AE24FF /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814251A7DCFE700AE24FF /* PageViewController.m */; };
-		3BE8142D1A7DD43200AE24FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE8142C1A7DD43200AE24FF /* Info.plist */; };
 		3BE814361A7DDE3300AE24FF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814351A7DDE3300AE24FF /* LoginViewController.m */; };
 		3BE814391A7DDE3E00AE24FF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE814381A7DDE3E00AE24FF /* SignUpViewController.m */; };
 		3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8143B1A7DE21400AE24FF /* MainVC.m */; };
@@ -40,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B5F74511A808CFC00A83B60 /* CustomBusinessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBusinessTableViewCell.h; sourceTree = "<group>"; };
+		3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBusinessTableViewCell.m; sourceTree = "<group>"; };
 		3BE813F71A7DC0A300AE24FF /* Subskribr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Subskribr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE813FC1A7DC0A300AE24FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BE813FE1A7DC0A300AE24FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +144,8 @@
 				3BE814251A7DCFE700AE24FF /* PageViewController.m */,
 				3BE814531A80524800AE24FF /* MainViewTableViewController.h */,
 				3BE814541A80524800AE24FF /* MainViewTableViewController.m */,
+				3B5F74511A808CFC00A83B60 /* CustomBusinessTableViewCell.h */,
+				3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */,
 				3BE8143D1A7DFCB600AE24FF /* SettingTableViewController.h */,
 				3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */,
 				3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */,
@@ -291,7 +295,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BE8142D1A7DD43200AE24FF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +342,7 @@
 				3BE814551A80524800AE24FF /* MainViewTableViewController.m in Sources */,
 				3BE814421A7FD72900AE24FF /* ProfileViewController.m in Sources */,
 				3BE814521A804CFD00AE24FF /* Business.m in Sources */,
+				3B5F74531A808CFC00A83B60 /* CustomBusinessTableViewCell.m in Sources */,
 				3BE8144F1A804AD100AE24FF /* DataSource.m in Sources */,
 				3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */,
 				3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */,

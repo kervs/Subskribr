@@ -12,7 +12,8 @@
 
 @interface DataSource ()
 @property (nonatomic, strong)NSArray *businessItems;
-
+@property (nonatomic,assign)NSUInteger countOflastArray;
+@property (nonatomic,assign)NSUInteger skip;
 @end
 
 @implementation DataSource
@@ -45,25 +46,69 @@
 }
 
 -(void)pullDataFromServer {
-    NSMutableArray *mutableBusinessArray = [NSMutableArray array];
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
+    NSMutableArray *mutableBusinessArray = [[NSMutableArray alloc]init];
+    
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu Businesses.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (Business *object in objects) {
+        
+        
+        if(!error)
+        {
+            
+            for(Business *object in objects) {
                 [mutableBusinessArray addObject:object];
             }
-        } else {
+        }
+        else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
             [self displayAlertView:[NSString stringWithFormat: @"%@",[error userInfo]]];
             
         }
         self.businessItems = mutableBusinessArray;
+        self.countOflastArray = mutableBusinessArray.count;
+        NSLog(@"count %lu",(unsigned long)self.countOflastArray);
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"NewBizNotification"
+         object:self];
     }];
+}
 
+
+- (void)pullNextBizAndChangeLastArray {
+    NSUInteger limit = 100;
+    NSMutableArray *oldarry = [[NSMutableArray alloc]initWithArray:self.businessItems];
+    self.skip += self.countOflastArray;
+     PFQuery *query = [PFQuery queryWithClassName:@"Business"];
+    if (self.countOflastArray % limit == 0) {
+        [query setSkip:limit];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            
+            if(!error)
+            {   self.countOflastArray = objects.count;
+                
+                for(Business *object in objects) {
+                    [oldarry addObject:object];
+                }
+            }
+            else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+                [self displayAlertView:[NSString stringWithFormat: @"%@",[error userInfo]]];
+                
+            }
+            self.businessItems = oldarry;
+            NSLog(@"count %lu",(unsigned long)self.countOflastArray);
+
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"NewBizNotification"
+             object:self];
+        }];
+        
+    }
     
 }
 

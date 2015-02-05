@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DataSource.h"
 #import "business.h"
+#import "CustomBusinessTableViewCell.h"
 
 @interface MainViewTableViewController ()
 @property (nonatomic,strong)UIView *refreshLoadingView;
@@ -19,25 +20,33 @@
 @property (nonatomic,strong)NSArray *businessArray;
 @property (assign)BOOL isRefreshIconsOverlap;
 @property (assign)BOOL isRefreshAnimating;
+@property (nonatomic,assign)NSUInteger refreshPoint;
 
 @end
-
+ static NSString *CellIdentifier = @"BizCell";
 @implementation MainViewTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[DataSource sharedInstance] addObserver:self forKeyPath:@"self.businessItems" options:NSKeyValueObservingOptionNew context:nil];
+    if ([DataSource sharedInstance].businessItems.count != 0) {
+        [self reloadBizList];
+    }
+    [DataSource sharedInstance];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"NewBizNotification"
+                                               object:nil];
     [self setupRefreshControl];
 }
 
-
-- (void)loadView {
-    [super loadView];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-}
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
     
-    if (object ) {
+    if ([[notification name] isEqualToString:@"NewBizNotification"])
+    {
         NSMutableArray *tempArray = [NSMutableArray array];
         
         for (Business *biz in [DataSource sharedInstance].businessItems) {
@@ -46,13 +55,19 @@
         }
         
         self.businessArray = tempArray;
+        self.refreshPoint = floor(self.businessArray.count/2);
     }
     [self.tableView reloadData];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+- (void)loadView {
+    [super loadView];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
 - (void)dealloc {
-    [[DataSource sharedInstance] removeObserver:self forKeyPath:@"self.businessItems"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +75,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)reloadJobList {
+- (void)reloadBizList {
     [[DataSource sharedInstance] pullDataFromServer];
     NSMutableArray *tempArray = [NSMutableArray array];
     
@@ -71,7 +86,7 @@
     
     self.businessArray = tempArray;
     [self.tableView reloadData];
-    NSLog(@"%lu",(unsigned long)self.businessArray.count);
+   
 }
 
 - (void)setupRefreshControl
@@ -115,17 +130,15 @@
 }
 
 - (void)refresh:(id)sender{
-    
-    
     // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
     // This is where you'll make requests to an API, reload data, or process information
-    [self reloadJobList];
+    [self reloadBizList];
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
         // When done requesting/reloading/processing invoke endRefreshing, to close the control
-        [self reloadJobList];
+        [self reloadBizList];
         [self.refreshControl endRefreshing];
     });
     // -- FINISHED SOMETHING AWESOME, WOO! --
@@ -200,7 +213,7 @@
         [self animateRefreshView];
     }
     
-    NSLog(@"pullDistance: %.1f, pullRatio: %.1f, midX: %.1f, isRefreshing: %i", pullDistance, pullRatio, midX, self.refreshControl.isRefreshing);
+   
 }
 
 - (void)animateRefreshView
@@ -244,36 +257,98 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.businessArray.count;
+    return [self.businessArray count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"MyIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    Business *bizObject = [self.businessArray objectAtIndex:[indexPath row]];
-    
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:MyIdentifier] ;
-    }
-    
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:bizObject.logoURL]
-                   placeholderImage:[UIImage imageNamed:@"placeholder_user.png"]];
-    
-    cell.textLabel.text = bizObject.name;
+- (CustomBusinessTableViewCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
+    CustomBusinessTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    [self configureBasicCell:cell atIndexPath:indexPath];
     return cell;
 }
 
+- (void)configureBasicCell:(CustomBusinessTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Business *biz = self.businessArray[indexPath.row];
+    [self setBizLogoForCell:cell item:biz];
+    [self setBizNameForCell:cell item:biz];
+    [self setBizRatingForCell:cell item:biz];
+    [self setBizNumberOfSubcribersForCell:cell item:biz];
+    [self setBizOwnerAvatarForCell:cell item:biz];
+    [self setBizTypeForCell:cell item:biz];
+    
+}
+
+- (void)setBizLogoForCell:(CustomBusinessTableViewCell *)cell item:(Business *)biz {
+    [cell.businessLogo sd_setImageWithURL:[NSURL URLWithString:biz.logoURL]
+                      placeholderImage:[UIImage imageNamed:@"placeholder_user.png"]];
+}
+
+- (void)setBizNameForCell:(CustomBusinessTableViewCell *)cell item:(Business *)biz {
+    NSString *name = biz.name ?: NSLocalizedString(@"[No name]", nil);
+    [cell.businessName setText:name];
+}
+
+- (void)setBizRatingForCell:(CustomBusinessTableViewCell *)cell item:(Business *)biz {
+    NSString *rating = [biz.totalRating stringValue] ?: NSLocalizedString(@"[No Title]", nil);
+    [cell.businessRating setText:[NSString stringWithFormat:@"%@ stars",rating]];
+}
+
+- (void)setBizOwnerAvatarForCell:(CustomBusinessTableViewCell *)cell item:(Business *)biz {
+    [cell.ownersAvatar sd_setImageWithURL:[NSURL URLWithString:biz.logoURL]
+                         placeholderImage:[UIImage imageNamed:@"placeholder_user.png"]];
+}
+
+- (void)setBizTypeForCell:(CustomBusinessTableViewCell *)cell item:(Business *)biz {
+    NSString *type = biz.businessType ?: NSLocalizedString(@"[No Title]", nil);
+    [cell.businessType setText:[NSString stringWithFormat:@"A %@",type]];
+}
+
+- (void)setBizNumberOfSubcribersForCell:(CustomBusinessTableViewCell *)cell item:(Business *)biz {
+    NSString *subcribers = [biz.totalSubscribers stringValue] ?: NSLocalizedString(@"[No Title]", nil);
+    [cell.numberOfSubscribers setText:[NSString stringWithFormat:@"%@ subcribers",subcribers]];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%li",(long)indexPath.row);
+    if (indexPath.row == self.refreshPoint) {
+        [[DataSource sharedInstance]pullNextBizAndChangeLastArray];
+    }
+    return [self basicCellAtIndexPath:indexPath];
+    
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForBasicCellAtIndexPath:indexPath];
+}
+
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static CustomBusinessTableViewCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    });
+    
+    [self configureBasicCell:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f; // Add 1.0f for the cell separator height
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+     return 100.0f;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -319,3 +394,4 @@
 */
 
 @end
+

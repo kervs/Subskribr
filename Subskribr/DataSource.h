@@ -11,5 +11,6 @@
 @interface DataSource : NSObject
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly)NSArray *businessItems;
--(void)pullDataFromServer;
+- (void)pullDataFromServer;
+- (void)pullNextBizAndChangeLastArray;
 @end
