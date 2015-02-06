@@ -335,31 +335,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mml-th-aqi" kind="relationship" relationship="rootViewController" id="FGq-KC-dRT"/>
+                        <segue destination="BRp-Oq-rVY" kind="relationship" relationship="rootViewController" id="Q6T-D3-FIb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHx-vx-aqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4325" y="3281"/>
-        </scene>
-        <!--Suggestion-->
-        <scene sceneID="gqK-0s-8Ai">
-            <objects>
-                <viewController id="mml-th-aqi" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5qm-Cd-tsR"/>
-                        <viewControllerLayoutGuide type="bottom" id="RFy-1c-tFS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="z7k-9m-EAN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Suggestion" id="VOi-K3-IUh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Evn-PH-qqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5005" y="3281"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7V6-vE-8uJ">
@@ -810,33 +791,6 @@
             </objects>
             <point key="canvasLocation" x="6112" y="281"/>
         </scene>
-        <!--Subcripitions-->
-        <scene sceneID="s13-Sc-RIZ">
-            <objects>
-                <tableViewController id="W3O-XN-xrC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bUz-4Y-Rqs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KdH-26-kzG">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdH-26-kzG" id="yiE-6D-o3Q">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="W3O-XN-xrC" id="3X7-iS-kfe"/>
-                            <outlet property="delegate" destination="W3O-XN-xrC" id="9v1-sF-HIg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Subcripitions" id="VwI-Um-6ww"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UJJ-iE-TDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4877" y="1345"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fba-5E-FX3">
             <objects>
@@ -897,12 +851,96 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="W3O-XN-xrC" kind="relationship" relationship="rootViewController" id="tDI-HJ-0vp"/>
+                        <segue destination="j9o-Hh-1gg" kind="relationship" relationship="rootViewController" id="aZ0-Ni-Aui"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVd-L2-1Mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4133" y="1345"/>
+            <point key="canvasLocation" x="4213" y="1329"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="N9B-ax-3PW">
+            <objects>
+                <tableViewController id="j9o-Hh-1gg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fRP-Oz-S6U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rpp-xs-h17">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rpp-xs-h17" id="8Z7-nQ-bc8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="j9o-Hh-1gg" id="Cmz-av-TPw"/>
+                            <outlet property="delegate" destination="j9o-Hh-1gg" id="qHx-pv-F7Z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sdc-Ls-uvz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B8L-IK-MBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5031" y="1337"/>
+        </scene>
+        <!--Suggestion Box View Controller-->
+        <scene sceneID="4y0-4J-lP9">
+            <objects>
+                <viewController id="BRp-Oq-rVY" customClass="SuggestionBoxViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X8I-8h-7Tx"/>
+                        <viewControllerLayoutGuide type="bottom" id="OHB-Va-UgV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jJx-Kk-H0v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got any suggestions? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-Xd-llj">
+                                <rect key="frame" x="56" y="84" width="488" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWb-X9-VsX">
+                                <rect key="frame" x="36" y="191" width="528" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="oz7-hX-AEI"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OHB-Va-UgV" firstAttribute="top" secondItem="pWb-X9-VsX" secondAttribute="bottom" constant="281" id="2YH-ih-W1x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pWb-X9-VsX" secondAttribute="trailing" constant="20" id="3ke-Bc-qlj"/>
+                            <constraint firstItem="u7D-Xd-llj" firstAttribute="leading" secondItem="jJx-Kk-H0v" secondAttribute="leadingMargin" constant="40" id="4Hc-dJ-W9b"/>
+                            <constraint firstAttribute="centerX" secondItem="pWb-X9-VsX" secondAttribute="centerX" id="B1y-G9-hyK"/>
+                            <constraint firstItem="pWb-X9-VsX" firstAttribute="leading" secondItem="jJx-Kk-H0v" secondAttribute="leadingMargin" constant="20" id="O0Q-Xs-oC6"/>
+                            <constraint firstItem="pWb-X9-VsX" firstAttribute="top" secondItem="u7D-Xd-llj" secondAttribute="bottom" constant="40" id="XpA-Nf-fWa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u7D-Xd-llj" secondAttribute="trailing" constant="40" id="haO-jP-SdO"/>
+                            <constraint firstItem="u7D-Xd-llj" firstAttribute="top" secondItem="X8I-8h-7Tx" secondAttribute="bottom" constant="20" id="wGD-9T-2AB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gCo-Rc-9cV">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="5UL-8U-cSt">
+                            <connections>
+                                <action selector="sendButtonDidFire:" destination="BRp-Oq-rVY" id="Zei-Vs-f6Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sendButton" destination="5UL-8U-cSt" id="Tyb-iY-ZMT"/>
+                        <outlet property="suggestionBoxTextView" destination="pWb-X9-VsX" id="e78-E4-Q0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sb4-PL-CPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5048" y="3356"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oLU-Gg-o52">

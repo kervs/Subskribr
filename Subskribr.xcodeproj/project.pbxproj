@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		331016BC469703CE29F7B02D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E09C6CC0588392BD2D46A253 /* libPods.a */; };
 		3B5F74531A808CFC00A83B60 /* CustomBusinessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */; };
+		3BDCF2B61A855A7B003BB8D9 /* SuggestionBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF2B51A855A7B003BB8D9 /* SuggestionBoxViewController.m */; };
 		3BE813FD1A7DC0A300AE24FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE813FC1A7DC0A300AE24FF /* main.m */; };
 		3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE813FF1A7DC0A300AE24FF /* AppDelegate.m */; };
 		3BE814061A7DC0A300AE24FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE814041A7DC0A300AE24FF /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		3B5F74511A808CFC00A83B60 /* CustomBusinessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBusinessTableViewCell.h; sourceTree = "<group>"; };
 		3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBusinessTableViewCell.m; sourceTree = "<group>"; };
+		3BDCF2B41A855A7B003BB8D9 /* SuggestionBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionBoxViewController.h; sourceTree = "<group>"; };
+		3BDCF2B51A855A7B003BB8D9 /* SuggestionBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionBoxViewController.m; sourceTree = "<group>"; };
 		3BE813F71A7DC0A300AE24FF /* Subskribr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Subskribr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE813FC1A7DC0A300AE24FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BE813FE1A7DC0A300AE24FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +112,81 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3BDCF2B71A855D5B003BB8D9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3BE814341A7DDE3300AE24FF /* LoginViewController.h */,
+				3BE814351A7DDE3300AE24FF /* LoginViewController.m */,
+				3BE814371A7DDE3E00AE24FF /* SignUpViewController.h */,
+				3BE814381A7DDE3E00AE24FF /* SignUpViewController.m */,
+				3BE814221A7DCFE700AE24FF /* PageContentViewController.h */,
+				3BE814231A7DCFE700AE24FF /* PageContentViewController.m */,
+				3BE814241A7DCFE700AE24FF /* PageViewController.h */,
+				3BE814251A7DCFE700AE24FF /* PageViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		3BDCF2B91A855DA0003BB8D9 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				3B5F74511A808CFC00A83B60 /* CustomBusinessTableViewCell.h */,
+				3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */,
+				3BE8143A1A7DE21400AE24FF /* MainVC.h */,
+				3BE8143B1A7DE21400AE24FF /* MainVC.m */,
+				3BE814531A80524800AE24FF /* MainViewTableViewController.h */,
+				3BE814541A80524800AE24FF /* MainViewTableViewController.m */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		3BDCF2BA1A855E1A003BB8D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BE814511A804CFD00AE24FF /* Business.m */,
+				3BE814501A804CFD00AE24FF /* Business.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3BDCF2BB1A855E3A003BB8D9 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				3BE8144E1A804AD100AE24FF /* DataSource.m */,
+				3BE8144D1A804AD100AE24FF /* DataSource.h */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+		3BDCF2BC1A855E68003BB8D9 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				3BE8143D1A7DFCB600AE24FF /* SettingTableViewController.h */,
+				3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		3BDCF2BD1A855E97003BB8D9 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				3BE814411A7FD72900AE24FF /* ProfileViewController.m */,
+				3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */,
+				3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */,
+				3BE814401A7FD72900AE24FF /* ProfileViewController.h */,
+			);
+			name = ProfileView;
+			sourceTree = "<group>";
+		};
+		3BDCF2BE1A855ED2003BB8D9 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				3BDCF2B51A855A7B003BB8D9 /* SuggestionBoxViewController.m */,
+				3BDCF2B41A855A7B003BB8D9 /* SuggestionBoxViewController.h */,
+			);
+			name = Suggestion;
+			sourceTree = "<group>";
+		};
 		3BE813EE1A7DC0A300AE24FF = {
 			isa = PBXGroup;
 			children = (
@@ -134,30 +212,13 @@
 			children = (
 				3BE813FE1A7DC0A300AE24FF /* AppDelegate.h */,
 				3BE813FF1A7DC0A300AE24FF /* AppDelegate.m */,
-				3BE814341A7DDE3300AE24FF /* LoginViewController.h */,
-				3BE814351A7DDE3300AE24FF /* LoginViewController.m */,
-				3BE814371A7DDE3E00AE24FF /* SignUpViewController.h */,
-				3BE814381A7DDE3E00AE24FF /* SignUpViewController.m */,
-				3BE814221A7DCFE700AE24FF /* PageContentViewController.h */,
-				3BE814231A7DCFE700AE24FF /* PageContentViewController.m */,
-				3BE814241A7DCFE700AE24FF /* PageViewController.h */,
-				3BE814251A7DCFE700AE24FF /* PageViewController.m */,
-				3BE814531A80524800AE24FF /* MainViewTableViewController.h */,
-				3BE814541A80524800AE24FF /* MainViewTableViewController.m */,
-				3B5F74511A808CFC00A83B60 /* CustomBusinessTableViewCell.h */,
-				3B5F74521A808CFC00A83B60 /* CustomBusinessTableViewCell.m */,
-				3BE8143D1A7DFCB600AE24FF /* SettingTableViewController.h */,
-				3BE8143E1A7DFCB600AE24FF /* SettingTableViewController.m */,
-				3BE814441A7FF7C500AE24FF /* ProfileEditViewController.h */,
-				3BE814451A7FF7C500AE24FF /* ProfileEditViewController.m */,
-				3BE814401A7FD72900AE24FF /* ProfileViewController.h */,
-				3BE814411A7FD72900AE24FF /* ProfileViewController.m */,
-				3BE8143A1A7DE21400AE24FF /* MainVC.h */,
-				3BE8143B1A7DE21400AE24FF /* MainVC.m */,
-				3BE814501A804CFD00AE24FF /* Business.h */,
-				3BE814511A804CFD00AE24FF /* Business.m */,
-				3BE8144D1A804AD100AE24FF /* DataSource.h */,
-				3BE8144E1A804AD100AE24FF /* DataSource.m */,
+				3BDCF2B91A855DA0003BB8D9 /* MainView */,
+				3BDCF2BC1A855E68003BB8D9 /* settings */,
+				3BDCF2B71A855D5B003BB8D9 /* Login */,
+				3BDCF2BA1A855E1A003BB8D9 /* Models */,
+				3BDCF2BB1A855E3A003BB8D9 /* Datasource */,
+				3BDCF2BD1A855E97003BB8D9 /* ProfileView */,
+				3BDCF2BE1A855ED2003BB8D9 /* Suggestion */,
 				3BE814041A7DC0A300AE24FF /* Main.storyboard */,
 				3BE814071A7DC0A300AE24FF /* Images.xcassets */,
 				3BE814091A7DC0A300AE24FF /* LaunchScreen.xib */,
@@ -346,6 +407,7 @@
 				3BE8144F1A804AD100AE24FF /* DataSource.m in Sources */,
 				3BE814001A7DC0A300AE24FF /* AppDelegate.m in Sources */,
 				3BE8143C1A7DE21400AE24FF /* MainVC.m in Sources */,
+				3BDCF2B61A855A7B003BB8D9 /* SuggestionBoxViewController.m in Sources */,
 				3BE814391A7DDE3E00AE24FF /* SignUpViewController.m in Sources */,
 				3BE8144C1A802AFB00AE24FF /* Keys.m in Sources */,
 				3BE8143F1A7DFCB600AE24FF /* SettingTableViewController.m in Sources */,
